@@ -25,8 +25,7 @@ pnpm add pinia-persistedstate-plugin
 ## UMD
 
 ```html
-<script src="https://unpkg.com/pinia-persistedstate-plugin/dist/pinia-persistedstate-plugin.umd.js
-"></script>
+<script src="https://unpkg.com/pinia-persistedstate-plugin/dist/pinia-persistedstate-plugin.umd.js"></script>
 ```
 
 插件为 window 添加全局变量 PiniaPersistedstatePlugin
@@ -54,7 +53,7 @@ app.use(store).mount('#app')
 ```ts
 export interface Options {
   /**
-   * 存贮类型，默认为 `window.localStorage`
+   * 存储类型，默认为 `window.localStorage`
    */
   storage: Storage
   /**

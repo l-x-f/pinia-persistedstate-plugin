@@ -19,7 +19,7 @@ export interface Storage {
  */
 export interface Options {
   /**
-   * 存贮类型，默认为 `window.localStorage`
+   * 存储类型，默认为 `window.localStorage`
    */
   storage?: Storage
   /**
