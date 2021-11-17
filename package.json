@@ -1,0 +1,40 @@
+{
+  "name": "pinia-persistedstate-plugin",
+  "version": "0.0.1",
+  "description": "A pinia plugin like vuex-persistedstate.",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": "xiaofei",
+  "keywords": [
+    "vue",
+    "vue3",
+    "pinia",
+    "plugin"
+  ],
+  "homepage": "https://github.com/l-x-f/pinia-persistedstate-plugin#readme",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/pinia-persistedstate-plugin.umd.js",
+  "module": "dist/pinia-persistedstate-plugin.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/pinia-persistedstate-plugin.es.js",
+      "require": "./dist/pinia-persistedstate-plugin.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "typescript": "^4.3.2",
+    "vite": "^2.6.4",
+    "vite-plugin-dts": "^0.9.4"
+  },
+  "dependencies": {
+    "pinia": "^2.0.3"
+  }
+}
