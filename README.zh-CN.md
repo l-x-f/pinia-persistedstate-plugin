@@ -32,13 +32,13 @@ pnpm add pinia-persistedstate-plugin
 
 ## 使用
 
-In `main.ts`:
+在 `main.ts`:
 
 ```ts
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createPersistedState } from 'pinia-persistedstate-plugin'
-import App from './App'
+import App from './App.vue'
 
 const app = createApp(App)
 const store = createPinia()

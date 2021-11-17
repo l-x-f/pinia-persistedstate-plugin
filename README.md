@@ -38,7 +38,7 @@ In `main.ts`:
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createPersistedState } from 'pinia-persistedstate-plugin'
-import App from './App'
+import App from './App.vue'
 
 const app = createApp(App)
 const store = createPinia()
