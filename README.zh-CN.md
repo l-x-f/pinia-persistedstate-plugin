@@ -25,7 +25,8 @@ pnpm add pinia-persistedstate-plugin
 ## UMD
 
 ```html
-<script src="https://unpkg.com/pinia-persistedstate-plugin/dist/pinia-persistedstate.umd.js"></script>
+<script src="https://unpkg.com/pinia-persistedstate-plugin/dist/pinia-persistedstate-plugin.umd.js
+"></script>
 ```
 
 插件为 window 添加全局变量 PiniaPersistedstatePlugin
