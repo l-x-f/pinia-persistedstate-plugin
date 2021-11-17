@@ -2,8 +2,6 @@
 
 **中文** | [English](./README.md)
 
-A pinia plugin like vuex-persistedstate for vue3.
-
 一个为 vue3 准备的和 vuex-persistedstate 类似的 pinia 插件
 
 ## 安装
@@ -26,7 +24,9 @@ pnpm add pinia-persistedstate-plugin
 
 ## UMD
 
+```html
 <script src="https://unpkg.com/pinia-persistedstate-plugin/dist/pinia-persistedstate.umd.js"></script>
+```
 
 插件为 window 添加全局变量 PiniaPersistedstatePlugin
 

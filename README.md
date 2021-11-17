@@ -24,7 +24,9 @@ pnpm add pinia-persistedstate-plugin
 
 The UMD build is also available on unpkg:
 
+```html
 <script src="https://unpkg.com/pinia-persistedstate-plugin/dist/pinia-persistedstate.umd.js"></script>
+```
 
 You can find the library on window.PiniaPersistedstatePlugin.
 
