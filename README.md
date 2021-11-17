@@ -45,7 +45,7 @@ const store = createPinia()
 
 store.use(createPersistedState())
 
-app.use(store)
+app.use(store).mount('#app')
 ```
 
 ## Options
