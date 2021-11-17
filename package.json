@@ -1,6 +1,6 @@
 {
   "name": "pinia-persistedstate-plugin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A pinia plugin like vuex-persistedstate.",
   "types": "dist/index.d.ts",
   "license": "MIT",

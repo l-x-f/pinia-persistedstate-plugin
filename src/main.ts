@@ -21,15 +21,15 @@ export interface Options {
   /**
    * 存贮类型，默认为 `window.localStorage`
    */
-  storage: Storage
+  storage?: Storage
   /**
    * 存储的key值，默认为 `pinia`
    */
-  key: string
+  key?: string
   /**
    * 是否开启日志，默认为 `false`
    */
-  logger: boolean
+  logger?: boolean
 }
 
 /**
