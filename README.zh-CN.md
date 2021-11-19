@@ -1,4 +1,4 @@
-# vite-plugin-dts
+# pinia-persistedstate-plugin
 
 **中文** | [English](./README.md)
 
