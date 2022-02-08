@@ -406,6 +406,11 @@ universalify@^2.0.0:
   resolved "https://registry.npmmirror.com/universalify/download/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=
 
+vite-plugin-banner@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmmirror.com/vite-plugin-banner/-/vite-plugin-banner-0.2.0.tgz#a67a938c9c5b338490d567628a3ba514dd847c90"
+  integrity sha512-IBRYVK6v92ihchBYxl6yhT57hr2cRnSX4RX6CJp84vNeWAg/Hht4B5Ywe0jwKA26Kkx/Yx4SGbMp8YLvAqm2pg==
+
 vite-plugin-dts@^0.9.4:
   version "0.9.4"
   resolved "https://registry.npmmirror.com/vite-plugin-dts/download/vite-plugin-dts-0.9.4.tgz#f949ecd21d6469ee7dfc41d115397f8131a235f0"

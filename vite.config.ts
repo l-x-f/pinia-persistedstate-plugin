@@ -1,6 +1,8 @@
 import path from 'path'
 import { defineConfig, UserConfigExport, ConfigEnv } from 'vite'
 import dts from 'vite-plugin-dts'
+import banner from 'vite-plugin-banner'
+import pkg from './package.json'
 
 // https://vitejs.dev/config/
 const config = ({ command, mode }: ConfigEnv): UserConfigExport => {
@@ -26,7 +28,10 @@ const config = ({ command, mode }: ConfigEnv): UserConfigExport => {
       dts({
         insertTypesEntry: true,
         copyDtsFiles: false
-      })
+      }),
+      banner(
+        `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * homepage: ${pkg.homepage}\n */`
+      )
     ]
   })
 }
