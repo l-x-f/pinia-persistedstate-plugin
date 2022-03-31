@@ -48,6 +48,27 @@ store.use(createPersistedState())
 app.use(store).mount('#app')
 ```
 
+use `js-cookie`
+
+```js
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import { createPersistedState } from 'pinia-persistedstate-plugin'
+import App from './App.vue'
+import Cookies from 'js-cookie'
+
+const app = createApp(App)
+const store = createPinia()
+
+store.use(
+  createPersistedState({
+    storage: Cookies
+  })
+)
+
+app.use(store).mount('#app')
+```
+
 ## Options
 
 ```ts
