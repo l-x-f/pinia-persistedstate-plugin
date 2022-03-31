@@ -54,10 +54,12 @@ app.use(store).mount('#app')
 export interface Options {
   /**
    * storage, default is `window.localStorage`
+   *
+   * support `js-cookie` `window.localStorage` `window.sessionStorage`
    */
-  storage: Storage
+  storage?: Storage | Cookies
   /**
-   * storage key, default is `pinia`
+   * storage key prefix, default is `pinia`
    */
   key: string
   /**

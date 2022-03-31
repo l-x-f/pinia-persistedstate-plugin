@@ -5,6 +5,8 @@ import {
   StateTree
 } from 'pinia'
 
+import jsCookies from 'js-cookie'
+
 /**
  * Storage类型
  */
@@ -14,6 +16,7 @@ export interface Storage {
   removeItem: (key: string) => void
 }
 
+type Cookies = typeof jsCookies
 /**
  * 配置类型
  */
@@ -21,7 +24,7 @@ export interface Options {
   /**
    * 存储类型，默认为 `window.localStorage`
    */
-  storage?: Storage
+  storage?: Storage | Cookies
   /**
    * 存储的key值，默认为 `pinia`
    */
@@ -64,8 +67,10 @@ export function createPersistedState(options?: Options): PiniaPlugin {
   const logger = options?.logger || false
 
   // 获取state的值
-  const getState = (key: string, storage: Storage) => {
-    const value = storage.getItem(key)
+  const getState = (key: string, storage: Options['storage']) => {
+    const value = (storage as Storage).getItem
+      ? (storage as Storage).getItem(key)
+      : (storage as Cookies).get(key)
     try {
       return typeof value === 'string'
         ? JSON.parse(value)
@@ -78,24 +83,31 @@ export function createPersistedState(options?: Options): PiniaPlugin {
   }
 
   // 设置state的值
-  const setState = (key: string, state: StateTree, storage: Storage) =>
-    storage.setItem(key, JSON.stringify(state))
+  const setState = (
+    key: string,
+    state: StateTree,
+    storage: Options['storage']
+  ) => {
+    return (storage as Storage).setItem
+      ? (storage as Storage).setItem(key, JSON.stringify(state))
+      : (storage as Cookies).set(key, JSON.stringify(state))
+  }
 
   return (Context: PiniaPluginContext) => {
     const store: PiniaPluginContext['store'] = Context.store
 
     // 初始化时获取数据，如果有的话，把原来的pinia的state替换掉
-    const data = getState(key, storage)
-    if (data) {
-      store.$state = data
-    }
+    const tempKey = `${key}-${store.$id}`
+    const data = getState(tempKey, storage)
+    data && store.$patch(data)
 
     // $subscribe()一个 store的方法来观察 state 和它的变化，类似于 Vuex 的subscribe 方法
     store.$subscribe(
       (mutation: SubscriptionCallbackMutation<any>, state: StateTree) => {
         // 记录日志
         logger && logGroup(mutation.storeId, mutation, state)
-        setState(key, state, storage)
+        const tempKey = `${key}-${mutation.storeId}`
+        setState(tempKey, state, storage)
       }
     )
   }

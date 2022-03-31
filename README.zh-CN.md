@@ -54,10 +54,12 @@ app.use(store).mount('#app')
 export interface Options {
   /**
    * 存储类型，默认为 `window.localStorage`
+   *
+   * 支持 `js-cookie` `window.localStorage` `window.sessionStorage`
    */
-  storage: Storage
+  storage?: Storage | Cookies
   /**
-   * 存储的key值，默认为 `pinia`
+   * 存储的key值前缀，默认为 `pinia`
    */
   key: string
   /**
